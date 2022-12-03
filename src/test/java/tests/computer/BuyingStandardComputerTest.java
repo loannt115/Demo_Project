@@ -9,12 +9,15 @@ import test_flows.computer.OrderComputerFlow;
 import tests.BaseTest;
 import url.Urls;
 
+import java.security.SecureRandom;
+
 public class BuyingStandardComputerTest extends BaseTest implements Urls {
     @Test(dataProvider = "computerData")
     public void testCheapComputerBuying(ComputerData computerData){
         driver.get(BASE_URL.concat(BUY_STANDARD_COMPUTER_SLUG));
+        int randomQuantity = new SecureRandom().nextInt(100) + 2;
         OrderComputerFlow<StandardComputerComponent> orderComputerFlow =
-                new OrderComputerFlow<>(driver, StandardComputerComponent.class, computerData);
+                new OrderComputerFlow<>(driver, StandardComputerComponent.class, computerData, randomQuantity);
         orderComputerFlow.buildComputerSpecAndAddToCart();
     }
 

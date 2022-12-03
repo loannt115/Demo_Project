@@ -12,6 +12,8 @@ public class OrderComputerFlow<T extends ComputerEssentialComponent> {
     private final WebDriver driver;
     private final Class<T> computerEssentialComponent;
     private ComputerData computerData;
+    private int quantity = 1;
+    private double totalItemPrice;
 
     public OrderComputerFlow(WebDriver driver, Class<T> computerEssentialComponent, ComputerData computerData) {
         this.driver = driver;
@@ -19,9 +21,20 @@ public class OrderComputerFlow<T extends ComputerEssentialComponent> {
         this.computerData = computerData;
     }
 
+    public OrderComputerFlow(WebDriver driver, Class<T> computerEssentialComponent, ComputerData computerData, int quantity) {
+        this.driver = driver;
+        this.computerEssentialComponent = computerEssentialComponent;
+        this.computerData = computerData;
+        this.quantity = quantity;
+    }
+
     public void buildComputerSpecAndAddToCart(){
         ComputerItemDetailsPage computerItemDetailsPage = new ComputerItemDetailsPage(driver);
         T computerEssentialComp = computerItemDetailsPage.computerComp(computerEssentialComponent);
+
+        // Unselect all default options
+        computerEssentialComp.unselectAllDefaultOptions();
+
         String processorFullStr = computerEssentialComp.selectProcessorType(computerData.getProcessorType());
         double processorAddedPrice = extractAdditionalPrice(processorFullStr);
         String RAMFullStr = computerEssentialComp.selectRAMType(computerData.getRam());
@@ -35,18 +48,44 @@ public class OrderComputerFlow<T extends ComputerEssentialComponent> {
             OSAddedPrice = extractAdditionalPrice(OSFullStr);
         }
 
-        double totalAddedPrice = processorAddedPrice + RAMAddedPrice + HDDAddedPrice + OSAddedPrice;
-        System.out.println("totalAddedPrice: " + totalAddedPrice);
+        String[] softwareFulListlStr = computerEssentialComp.selectSoftwareType(computerData.getSoftware());
+        double softwareAddedPrice = 0;
+        for (String software : softwareFulListlStr) {
+            softwareAddedPrice += extractAdditionalPrice(software);
+        }
+
+        if(this.quantity != 1){
+            computerEssentialComp.inputQuantity(this.quantity);
+        }
+
+        double totalAddedPrice = processorAddedPrice + RAMAddedPrice + HDDAddedPrice + OSAddedPrice + softwareAddedPrice;
+        totalItemPrice = (computerEssentialComp.basePrice() + totalAddedPrice) * this.quantity;
+
+        // Add to cart
+        computerEssentialComp.clickOnAddToCartBtn();
+        computerItemDetailsPage.barNotificationComp().waitUntilItemAddedToCart();
+        computerItemDetailsPage.barNotificationComp().clickOnCloseBtn();
+
+        // Navigate to shopping cart
+        computerItemDetailsPage.headerComp().clickOnShoppingCartLink();
+
+        // DEBUG purpose only
+        try{
+            Thread.sleep(3000);
+        } catch (Exception ignored){}
     }
 
     private static double extractAdditionalPrice(String itemStr){
         double price = 0;
+        int factor = 1;
         Pattern pattern = Pattern.compile("\\[(.*?)\\]");
         Matcher matcher = pattern.matcher(itemStr);
         if (matcher.find()){
-            price = Double.parseDouble(matcher.group(1).replaceAll("[+-]",""));
+            String priceStr = matcher.group(1);
+            if (priceStr.startsWith("-")) factor = -1;
+            price = Double.parseDouble(priceStr.replaceAll("[+-]",""));
         }
-        return price;
+        return price * factor;
     }
 
 }

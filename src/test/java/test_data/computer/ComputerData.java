@@ -5,9 +5,9 @@ public class ComputerData {
     private String ram;
     private String os;
     private String hdd;
-    private String software;
+    private String[] software;
 
-    public ComputerData(String processorType, String ram, String os, String hdd, String software) {
+    public ComputerData(String processorType, String ram, String os, String hdd, String[] software) {
         this.processorType = processorType;
         this.ram = ram;
         this.os = os;
@@ -47,11 +47,11 @@ public class ComputerData {
         this.hdd = hdd;
     }
 
-    public String getSoftware() {
+    public String[] getSoftware() {
         return software;
     }
 
-    public void setSoftware(String software) {
+    public void setSoftware(String[] software) {
         this.software = software;
     }
 
