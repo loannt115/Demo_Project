@@ -1,10 +1,16 @@
 package test_flows.computer;
 
+import models.components.cart.CartItemRowComponent;
+import models.components.cart.TotalComponent;
 import models.components.order.ComputerEssentialComponent;
 import models.pages.ComputerItemDetailsPage;
+import models.pages.ShoppingCartPage;
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 import test_data.computer.ComputerData;
 
+import java.util.List;
+import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -88,4 +94,37 @@ public class OrderComputerFlow<T extends ComputerEssentialComponent> {
         return price * factor;
     }
 
+    public void verifyShoppingCartPage(){
+        ShoppingCartPage shoppingCartPage = new ShoppingCartPage(driver);
+        List<CartItemRowComponent> cartItemRowCompList = shoppingCartPage.cartItemRowCompList();
+        if(cartItemRowCompList.isEmpty()){
+            Assert.fail("[ERR] There is no item displayed in the shopping cart");
+        }
+
+        double allSubTotal = 0;
+        for (CartItemRowComponent cartItemRowComp : cartItemRowCompList) {
+            double currentSubtotal = cartItemRowComp.subTotal();
+            double expectedSubTotal = cartItemRowComp.quantity() * cartItemRowComp.unitPrice();
+            Assert.assertEquals(currentSubtotal, expectedSubTotal, "[ERR] The subtotal on the item is incorrect");
+            allSubTotal = allSubTotal + currentSubtotal;
+        }
+        TotalComponent totalComp = shoppingCartPage.totalComp();
+        Map<String, Double> priceCategories = totalComp.priceCategories();
+        double checkoutSubTotal = 0;
+        double checkoutOtherFeesTotal = 0;
+        double checkoutTotal = 0;
+        for (String priceType : priceCategories.keySet()) {
+            double priceValue = priceCategories.get(priceType);
+            if(priceType.startsWith("Sub-Total")){
+                checkoutSubTotal = priceValue;
+            } else if(priceType.startsWith("Total")){
+                checkoutTotal = priceValue;
+            } else {
+                checkoutOtherFeesTotal = checkoutOtherFeesTotal + priceValue;
+            }
+        }
+
+        Assert.assertEquals(allSubTotal, checkoutSubTotal, "[ERR] Checking out Subtotal value is incorrect");
+        Assert.assertEquals((checkoutSubTotal + checkoutOtherFeesTotal), checkoutTotal, "[ERR] Checking out Total value is incorrect");
+    }
 }

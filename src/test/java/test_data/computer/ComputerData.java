@@ -1,5 +1,7 @@
 package test_data.computer;
 
+import java.util.Arrays;
+
 public class ComputerData {
     private String processorType;
     private String ram;
@@ -62,7 +64,7 @@ public class ComputerData {
                 ", ram='" + ram + '\'' +
                 ", os='" + os + '\'' +
                 ", hdd='" + hdd + '\'' +
-                ", software='" + software + '\'' +
+                ", software=" + Arrays.toString(software) +
                 '}';
     }
 }

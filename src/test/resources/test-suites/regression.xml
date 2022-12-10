@@ -6,4 +6,10 @@
             <class name="tests.global.footer.FooterTest" />
         </classes>
     </test>
+    <test name="Order Computer" >
+        <classes>
+            <class name="tests.computer.BuyingCheapComputerTest" />
+            <class name="tests.computer.BuyingStandardComputerTest" />
+        </classes>
+    </test>
 </suite>
