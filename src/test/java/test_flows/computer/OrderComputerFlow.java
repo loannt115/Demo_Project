@@ -2,25 +2,19 @@ package test_flows.computer;
 
 import models.components.cart.CartItemRowComponent;
 import models.components.cart.TotalComponent;
-import models.components.checkout.BillingAddressComponent;
-import models.components.checkout.ShippingAddressComponent;
-import models.components.checkout.ShippingMethodComponent;
+import models.components.checkout.*;
 import models.components.order.ComputerEssentialComponent;
-import models.pages.CheckoutOptionsPage;
-import models.pages.CheckoutPage;
-import models.pages.ComputerItemDetailsPage;
-import models.pages.ShoppingCartPage;
+import models.pages.*;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
+import test_data.CreditCardType;
 import test_data.DataObjectBuilder;
+import test_data.PaymentMethodType;
 import test_data.computer.ComputerData;
 import test_data.user.UserData;
 
 import java.security.SecureRandom;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -31,6 +25,8 @@ public class OrderComputerFlow<T extends ComputerEssentialComponent> {
     private int quantity = 1;
     private double totalItemPrice;
     private UserData defaultCheckoutUser;
+    private PaymentMethodType paymentMethod;
+    private CreditCardType creditCardType;
 
     public OrderComputerFlow(WebDriver driver, Class<T> computerEssentialComponent, ComputerData computerData) {
         this.driver = driver;
@@ -184,4 +180,58 @@ public class OrderComputerFlow<T extends ComputerEssentialComponent> {
         shippingMethodComp.clickOnContinueBtn();
     }
 
+    public void selectPaymentMethod(PaymentMethodType paymentMethod){
+        if (paymentMethod == null) throw new IllegalArgumentException("[ERR] Payment method can't be null!");
+        this.paymentMethod = paymentMethod;
+        CheckoutPage checkoutPage = new CheckoutPage(driver);
+        PaymentMethodComponent paymentMethodComp = checkoutPage.paymentMethodComp();
+        switch (paymentMethod){
+            case CHECK_MONEY_ORDER:
+                paymentMethodComp.selectCheckMoneyOrderMethod();
+                break;
+            case CREDIT_CARD:
+                paymentMethodComp.selectCreditCardMethod();
+                break;
+            case PURCHASE_ORDER:
+                paymentMethodComp.selectPurchaseOrderMethod();
+                break;
+            default:
+                paymentMethodComp.selectCODMethod();
+        }
+        paymentMethodComp.clickOnContinueBtn();
+    }
+
+    // https://www.paypalobjects.com/en_GB/vhelp/paypalmanager_help/credit_card_numbers.htm
+    public void inputCreditCardPaymentInformation(CreditCardType creditCardType){
+        if (creditCardType == null) throw new IllegalArgumentException("[ERR] Credit card type can't be null!");
+        this.creditCardType = creditCardType;
+        CheckoutPage checkoutPage = new CheckoutPage(driver);
+        PaymentInformationComponent paymentInformationComp = checkoutPage.paymentInformationComp();
+        paymentInformationComp.selectCreditCardType(creditCardType);
+        paymentInformationComp.inputCardholderName(defaultCheckoutUser.getFirstName() + " " + defaultCheckoutUser.getLastName());
+        String cardNumber = creditCardType.equals(CreditCardType.VISA) ? "4111111111111111" : "6011111111111117";
+        paymentInformationComp.inputCardNumber(cardNumber);
+        Calendar calendar = new GregorianCalendar();
+        paymentInformationComp.selectExpireMonth(String.valueOf(calendar.get(Calendar.MONTH) + 1));
+        paymentInformationComp.selectExpireYear(String.valueOf(calendar.get(Calendar.YEAR) + 1));
+        paymentInformationComp.inputCardCode("123");
+        paymentInformationComp.clickOnContinueBtn();
+    }
+
+    public void confirmOrder(){
+        CheckoutPage checkoutPage = new CheckoutPage(driver);
+        ConfirmOrderComponent confirmOrderComp = checkoutPage.confirmOrderComponent();
+        confirmOrderComp.clickOnConfirmBtn();
+    }
+
+    public void verifyCheckoutCompleteInfo(){
+        CheckoutCompletePage checkoutCompletePage = new CheckoutCompletePage(driver);
+        CheckoutCompleteComponent checkoutCompleteComp = checkoutCompletePage.checkoutCompleteComp();
+        String actualOrderSuccessMessage = checkoutCompleteComp.messageOrderSuccess();
+        String actualOrderNumber = checkoutCompleteComp.orderNumber();
+        String expectedOrderSuccessMessage = "Your order has been successfully processed!";
+        Assert.assertEquals(actualOrderSuccessMessage, expectedOrderSuccessMessage, "[ERR] The order success message is not correct!");
+        Assert.assertEquals(actualOrderNumber.length(),7, "[ERR] The order number don't have 7 characters!");
+        checkoutCompleteComp.clickOnContinueBtn();
+    }
 }
