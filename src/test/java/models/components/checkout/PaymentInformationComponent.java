@@ -5,6 +5,7 @@ import models.components.ComponentCssSelector;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import test_data.CreditCardType;
 
@@ -64,6 +65,8 @@ public class PaymentInformationComponent extends Component {
     }
 
     public void clickOnContinueBtn(){
-        findElement(continueBtnSel).click();
+        WebElement continueBtnElem = findElement(continueBtnSel);
+        continueBtnElem.click();
+        wait.until(ExpectedConditions.invisibilityOf(continueBtnElem));
     }
 }

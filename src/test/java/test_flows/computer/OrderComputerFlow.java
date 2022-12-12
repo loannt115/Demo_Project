@@ -1,5 +1,6 @@
 package test_flows.computer;
 
+import io.qameta.allure.Step;
 import models.components.cart.CartItemRowComponent;
 import models.components.cart.TotalComponent;
 import models.components.checkout.*;
@@ -41,6 +42,7 @@ public class OrderComputerFlow<T extends ComputerEssentialComponent> {
         this.quantity = quantity;
     }
 
+    @Step("Build Computer Spec And Add To Cart")
     public void buildComputerSpecAndAddToCart(){
         ComputerItemDetailsPage computerItemDetailsPage = new ComputerItemDetailsPage(driver);
         T computerEssentialComp = computerItemDetailsPage.computerComp(computerEssentialComponent);
@@ -101,6 +103,7 @@ public class OrderComputerFlow<T extends ComputerEssentialComponent> {
         return price * factor;
     }
 
+    @Step("Verify Shopping Cart")
     public void verifyShoppingCartPage(){
         ShoppingCartPage shoppingCartPage = new ShoppingCartPage(driver);
         List<CartItemRowComponent> cartItemRowCompList = shoppingCartPage.cartItemRowCompList();
@@ -135,6 +138,7 @@ public class OrderComputerFlow<T extends ComputerEssentialComponent> {
         Assert.assertEquals((checkoutSubTotal + checkoutOtherFeesTotal), checkoutTotal, "[ERR] Checking out Total value is incorrect");
     }
 
+    @Step("Agree TOS And CheckOut")
     public void agreeTOSAndCheckOut(){
         ShoppingCartPage shoppingCartPage = new ShoppingCartPage(driver);
         shoppingCartPage.totalComp().agreeTOS();
@@ -143,6 +147,7 @@ public class OrderComputerFlow<T extends ComputerEssentialComponent> {
         checkoutOptionsPage.checkOutAsGuest();
     }
 
+    @Step("Input Billing Address")
     public void inputBillingAddress(){
         String defaultCheckoutUserLocation = "/src/test/java/test_data/user/DefaultCheckoutUser.json";
         defaultCheckoutUser = DataObjectBuilder.buildDataObjectFrom(defaultCheckoutUserLocation,UserData.class);
@@ -164,12 +169,14 @@ public class OrderComputerFlow<T extends ComputerEssentialComponent> {
         billingAddressComp.clickOnContinueBtn();
     }
 
+    @Step("Input Shipping Address")
     public void inputShippingAddress(){
         CheckoutPage checkoutPage = new CheckoutPage(driver);
         ShippingAddressComponent shippingAddressComp = checkoutPage.shippingAddressComp();
         shippingAddressComp.clickOnContinueBtn();
     }
 
+    @Step("Select Shipping Method")
     public void selectShippingMethod(){
         List<String> shippingMethodList = Arrays.asList("Ground", "Next Day Air", "2nd Day Air");
         int randomIndex = new SecureRandom().nextInt(shippingMethodList.size());
@@ -180,6 +187,7 @@ public class OrderComputerFlow<T extends ComputerEssentialComponent> {
         shippingMethodComp.clickOnContinueBtn();
     }
 
+    @Step("Select Payment Method")
     public void selectPaymentMethod(PaymentMethodType paymentMethod){
         if (paymentMethod == null) throw new IllegalArgumentException("[ERR] Payment method can't be null!");
         this.paymentMethod = paymentMethod;
@@ -201,6 +209,7 @@ public class OrderComputerFlow<T extends ComputerEssentialComponent> {
         paymentMethodComp.clickOnContinueBtn();
     }
 
+    @Step("Input Credit Card Payment Information")
     // https://www.paypalobjects.com/en_GB/vhelp/paypalmanager_help/credit_card_numbers.htm
     public void inputCreditCardPaymentInformation(CreditCardType creditCardType){
         if (creditCardType == null) throw new IllegalArgumentException("[ERR] Credit card type can't be null!");
@@ -218,12 +227,14 @@ public class OrderComputerFlow<T extends ComputerEssentialComponent> {
         paymentInformationComp.clickOnContinueBtn();
     }
 
+    @Step("Confirm Order")
     public void confirmOrder(){
         CheckoutPage checkoutPage = new CheckoutPage(driver);
         ConfirmOrderComponent confirmOrderComp = checkoutPage.confirmOrderComponent();
         confirmOrderComp.clickOnConfirmBtn();
     }
 
+    @Step("Verify Checkout Complete Info")
     public void verifyCheckoutCompleteInfo(){
         CheckoutCompletePage checkoutCompletePage = new CheckoutCompletePage(driver);
         CheckoutCompleteComponent checkoutCompleteComp = checkoutCompletePage.checkoutCompleteComp();
