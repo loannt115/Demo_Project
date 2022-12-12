@@ -5,6 +5,7 @@ import models.components.ComponentCssSelector;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 @ComponentCssSelector(value = "#opc-shipping_method")
 public class ShippingMethodComponent extends Component {
@@ -21,10 +22,8 @@ public class ShippingMethodComponent extends Component {
     }
 
     public void clickOnContinueBtn(){
-        findElement(continueBtnSel).click();
-
-        try {
-            Thread.sleep(2000);
-        } catch (Exception ignore){}
+        WebElement continueBtnElem = findElement(continueBtnSel);
+        continueBtnElem.click();
+        wait.until(ExpectedConditions.invisibilityOf(continueBtnElem));
     }
 }
