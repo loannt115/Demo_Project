@@ -61,41 +61,65 @@ public class DriverFactory {
     }
 
     public WebDriver getDriver (String browserName){
-//        String currentProjectLocation = System.getProperty("user.dir");
-//        String chromeDriverLocation ;
-//        if (OS.isFamilyMac()){
-//            chromeDriverLocation = "/src/main/resources/drivers/chromedriver.exe";
-//        } else if (OS.isFamilyWindows()) {
-//            chromeDriverLocation = "\\src\\main\\resources\\drivers\\chromedriver.exe";
-//        } else {
-//            throw new RuntimeException("[ERR] Couldn't detect the OS");
-//        }
-//        String chromeAbsoluteLocation = currentProjectLocation.concat(chromeDriverLocation);
-//        String firefoxDriverLocation ;
-//        if (OS.isFamilyMac()){
-//            firefoxDriverLocation = "/src/main/resources/drivers/geckodriver.exe";
-//        } else if (OS.isFamilyWindows()) {
-//            firefoxDriverLocation = "\\src\\main\\resources\\drivers\\geckodriver.exe";
-//        } else {
-//            throw new RuntimeException("[ERR] Couldn't detect the OS");
-//        }
-//        String firefoxAbsoluteLocation = currentProjectLocation.concat(firefoxDriverLocation);
+        boolean isRemoteRunning = System.getProperty("hub") != null;
+        if (isRemoteRunning) return getRemoteWebDriver(browserName, System.getProperty("hub"));
+        else return getLocalDriver(browserName);
+    }
+
+    private WebDriver getLocalDriver(String browserName){
+        String currentProjectLocation = System.getProperty("user.dir");
+        String chromeDriverLocation ;
+        if (OS.isFamilyMac()){
+            chromeDriverLocation = "/src/main/resources/drivers/chromedriver.exe";
+        } else if (OS.isFamilyWindows()) {
+            chromeDriverLocation = "\\src\\main\\resources\\drivers\\chromedriver.exe";
+        } else {
+            throw new RuntimeException("[ERR] Couldn't detect the OS");
+        }
+        String chromeAbsoluteLocation = currentProjectLocation.concat(chromeDriverLocation);
+        String firefoxDriverLocation ;
+        if (OS.isFamilyMac()){
+            firefoxDriverLocation = "/src/main/resources/drivers/geckodriver.exe";
+        } else if (OS.isFamilyWindows()) {
+            firefoxDriverLocation = "\\src\\main\\resources\\drivers\\geckodriver.exe";
+        } else {
+            throw new RuntimeException("[ERR] Couldn't detect the OS");
+        }
+        String firefoxAbsoluteLocation = currentProjectLocation.concat(firefoxDriverLocation);
+
+        if (driver == null) {
+            switch (browserName) {
+                case ("chrome"):
+                    System.setProperty("webdriver.chrome.driver", chromeAbsoluteLocation);
+                    driver = new ChromeDriver();
+                    break;
+                case ("firefox"):
+                    System.setProperty("webdriver.gecko.driver", firefoxAbsoluteLocation);
+                    driver = new FirefoxDriver();
+                    break;
+                case ("safari"):
+                    driver = new SafariDriver();
+                    break;
+                default:
+                    throw new IllegalArgumentException(browserName + " is not supported!");
+            }
+        }
+
+        return driver;
+    }
+
+    private WebDriver getRemoteWebDriver(String browserName, String hub){
         if (driver == null) {
             DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
             desiredCapabilities.setPlatform(Platform.ANY);
             switch (browserName) {
                 case ("chrome"):
-//                    System.setProperty("webdriver.chrome.driver", chromeAbsoluteLocation);
-//                    driver = new ChromeDriver();
                     desiredCapabilities.setBrowserName("chrome");
                     break;
                 case ("firefox"):
-//                    System.setProperty("webdriver.gecko.driver", firefoxAbsoluteLocation);
-//                    driver = new FirefoxDriver();
                     desiredCapabilities.setBrowserName("firefox");
                     break;
                 case ("safari"):
-//                    driver = new SafariDriver();
                     desiredCapabilities.setBrowserName("safari");
                     break;
                 default:
@@ -103,8 +127,7 @@ public class DriverFactory {
             }
 
             try {
-                String hub = "http://localhost:4444/wd/hub";
-                URL hubUrl = new URL(hub);
+                URL hubUrl = new URL(hub.concat("/wd/hub"));
                 driver = new RemoteWebDriver(hubUrl, desiredCapabilities);
                 driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15L));
             } catch (Exception e){
