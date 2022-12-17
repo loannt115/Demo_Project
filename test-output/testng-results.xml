@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="6" passed="6" failed="0" skipped="0">
+<testng-results ignored="0" total="6" passed="2" failed="4" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-12-12T23:30:47 ICT" name="Regression" finished-at="2022-12-12T23:31:58 ICT" duration-ms="70722">
+  <suite started-at="2022-12-13T23:45:41 ICT" name="Regression" finished-at="2022-12-13T23:46:21 ICT" duration-ms="40636">
     <groups>
       <group name="smoke">
         <method signature="FooterTest.testHomePageFooter()[pri:0, instance:test.global.footer.FooterTest@4dd6fd0a]" name="testHomePageFooter" class="test.global.footer.FooterTest"/>
       </group> <!-- smoke -->
     </groups>
-    <test started-at="2022-12-12T23:30:47 ICT" name="Group 3" finished-at="2022-12-12T23:30:56 ICT" duration-ms="8821">
+    <test started-at="2022-12-13T23:45:41 ICT" name="Group 3" finished-at="2022-12-13T23:45:54 ICT" duration-ms="13904">
       <class name="test.global.footer.FooterTest">
-        <test-method is-config="true" signature="initBrowserSession(java.lang.String)[pri:0, instance:test.global.footer.FooterTest@4dd6fd0a]" started-at="2022-12-12T23:30:48 ICT" name="initBrowserSession" finished-at="2022-12-12T23:30:48 ICT" duration-ms="24" status="PASS">
+        <test-method is-config="true" signature="initBrowserSession(java.lang.String)[pri:0, instance:test.global.footer.FooterTest@4dd6fd0a]" started-at="2022-12-13T23:45:41 ICT" name="initBrowserSession" finished-at="2022-12-13T23:45:41 ICT" duration-ms="25" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -21,11 +21,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initBrowserSession -->
-        <test-method signature="testHomePageFooter()[pri:0, instance:test.global.footer.FooterTest@4dd6fd0a]" started-at="2022-12-12T23:30:48 ICT" name="testHomePageFooter" finished-at="2022-12-12T23:30:55 ICT" duration-ms="7083" status="PASS">
+        <test-method signature="testHomePageFooter()[pri:0, instance:test.global.footer.FooterTest@4dd6fd0a]" started-at="2022-12-13T23:45:41 ICT" name="testHomePageFooter" finished-at="2022-12-13T23:45:53 ICT" duration-ms="12142" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testHomePageFooter -->
-        <test-method is-config="true" signature="captureScreenshot(org.testng.ITestResult)[pri:0, instance:test.global.footer.FooterTest@4dd6fd0a]" started-at="2022-12-12T23:30:55 ICT" name="captureScreenshot" finished-at="2022-12-12T23:30:55 ICT" duration-ms="2" status="PASS">
+        <test-method is-config="true" signature="captureScreenshot(org.testng.ITestResult)[pri:0, instance:test.global.footer.FooterTest@4dd6fd0a]" started-at="2022-12-13T23:45:53 ICT" name="captureScreenshot" finished-at="2022-12-13T23:45:53 ICT" duration-ms="2" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -36,11 +36,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- captureScreenshot -->
-        <test-method signature="testLoginPageFooter()[pri:0, instance:test.global.footer.FooterTest@4dd6fd0a]" started-at="2022-12-12T23:30:55 ICT" name="testLoginPageFooter" finished-at="2022-12-12T23:30:56 ICT" duration-ms="1377" status="PASS">
+        <test-method signature="testLoginPageFooter()[pri:0, instance:test.global.footer.FooterTest@4dd6fd0a]" started-at="2022-12-13T23:45:53 ICT" name="testLoginPageFooter" finished-at="2022-12-13T23:45:54 ICT" duration-ms="1406" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testLoginPageFooter -->
-        <test-method is-config="true" signature="captureScreenshot(org.testng.ITestResult)[pri:0, instance:test.global.footer.FooterTest@4dd6fd0a]" started-at="2022-12-12T23:30:56 ICT" name="captureScreenshot" finished-at="2022-12-12T23:30:56 ICT" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="captureScreenshot(org.testng.ITestResult)[pri:0, instance:test.global.footer.FooterTest@4dd6fd0a]" started-at="2022-12-13T23:45:54 ICT" name="captureScreenshot" finished-at="2022-12-13T23:45:54 ICT" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -51,15 +51,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- captureScreenshot -->
-        <test-method is-config="true" signature="closeBrowserSession()[pri:0, instance:test.global.footer.FooterTest@4dd6fd0a]" started-at="2022-12-12T23:30:56 ICT" name="closeBrowserSession" finished-at="2022-12-12T23:30:56 ICT" duration-ms="164" status="PASS">
+        <test-method is-config="true" signature="closeBrowserSession()[pri:0, instance:test.global.footer.FooterTest@4dd6fd0a]" started-at="2022-12-13T23:45:54 ICT" name="closeBrowserSession" finished-at="2022-12-13T23:45:54 ICT" duration-ms="187" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowserSession -->
       </class> <!-- test.global.footer.FooterTest -->
     </test> <!-- Group 3 -->
-    <test started-at="2022-12-12T23:30:47 ICT" name="Group 1" finished-at="2022-12-12T23:31:20 ICT" duration-ms="32581">
+    <test started-at="2022-12-13T23:45:41 ICT" name="Group 1" finished-at="2022-12-13T23:45:59 ICT" duration-ms="18399">
       <class name="test.computer.BuyingCheapComputerTest">
-        <test-method is-config="true" signature="initBrowserSession(java.lang.String)[pri:0, instance:test.computer.BuyingCheapComputerTest@5f77d0f9]" started-at="2022-12-12T23:30:48 ICT" name="initBrowserSession" finished-at="2022-12-12T23:30:48 ICT" duration-ms="24" status="PASS">
+        <test-method is-config="true" signature="initBrowserSession(java.lang.String)[pri:0, instance:test.computer.BuyingCheapComputerTest@5f77d0f9]" started-at="2022-12-13T23:45:41 ICT" name="initBrowserSession" finished-at="2022-12-13T23:45:41 ICT" duration-ms="25" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -70,7 +70,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initBrowserSession -->
-        <test-method signature="testCheapComputerBuying(test_data.computer.ComputerData)[pri:0, instance:test.computer.BuyingCheapComputerTest@5f77d0f9]" started-at="2022-12-12T23:30:48 ICT" name="testCheapComputerBuying" data-provider="computerData" finished-at="2022-12-12T23:31:20 ICT" duration-ms="32284" status="PASS">
+        <test-method signature="testCheapComputerBuying(test_data.computer.ComputerData)[pri:0, instance:test.computer.BuyingCheapComputerTest@5f77d0f9]" started-at="2022-12-13T23:45:41 ICT" name="testCheapComputerBuying" data-provider="computerData" finished-at="2022-12-13T23:45:59 ICT" duration-ms="17851" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -78,29 +78,72 @@
               </value>
             </param>
           </params>
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[Cannot locate option with text: Hawaii
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.3.0', revision: 'a4995e2c09*'
+System info: host: 'LAPTOP-020HTH5G', ip: '55.5.55.102', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.16'
+Driver info: driver.version: unknown]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: Cannot locate option with text: Hawaii
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.3.0', revision: 'a4995e2c09*'
+System info: host: 'LAPTOP-020HTH5G', ip: '55.5.55.102', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.16'
+Driver info: driver.version: unknown
+at org.openqa.selenium.support.ui.Select.selectByVisibleText(Select.java:151)
+at models.components.checkout.BillingAddressComponent.selectState(BillingAddressComponent.java:63)
+at test_flows.computer.OrderComputerFlow.inputBillingAddress(OrderComputerFlow.java:162)
+at test.computer.BuyingCheapComputerTest.testCheapComputerBuying(BuyingCheapComputerTest.java:28)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:962)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+at org.testng.TestRunner.privateRun(TestRunner.java:806)
+at org.testng.TestRunner.run(TestRunner.java:601)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:433)
+at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:471)
+at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:58)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+at java.base/java.lang.Thread.run(Thread.java:834)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testCheapComputerBuying -->
-        <test-method is-config="true" signature="captureScreenshot(org.testng.ITestResult)[pri:0, instance:test.computer.BuyingCheapComputerTest@5f77d0f9]" started-at="2022-12-12T23:31:20 ICT" name="captureScreenshot" finished-at="2022-12-12T23:31:20 ICT" duration-ms="2" status="PASS">
+        <test-method is-config="true" signature="captureScreenshot(org.testng.ITestResult)[pri:0, instance:test.computer.BuyingCheapComputerTest@5f77d0f9]" started-at="2022-12-13T23:45:59 ICT" name="captureScreenshot" finished-at="2022-12-13T23:45:59 ICT" duration-ms="196" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=testCheapComputerBuying status=SUCCESS method=BuyingCheapComputerTest.testCheapComputerBuying(test_data.computer.ComputerData)[pri:0, instance:test.computer.BuyingCheapComputerTest@5f77d0f9] output={null}]]]>
+                <![CDATA[[TestResult name=testCheapComputerBuying status=FAILURE method=BuyingCheapComputerTest.testCheapComputerBuying(test_data.computer.ComputerData)[pri:0, instance:test.computer.BuyingCheapComputerTest@5f77d0f9] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- captureScreenshot -->
-        <test-method is-config="true" signature="closeBrowserSession()[pri:0, instance:test.computer.BuyingCheapComputerTest@5f77d0f9]" started-at="2022-12-12T23:31:20 ICT" name="closeBrowserSession" finished-at="2022-12-12T23:31:20 ICT" duration-ms="179" status="PASS">
+        <test-method is-config="true" signature="closeBrowserSession()[pri:0, instance:test.computer.BuyingCheapComputerTest@5f77d0f9]" started-at="2022-12-13T23:45:59 ICT" name="closeBrowserSession" finished-at="2022-12-13T23:45:59 ICT" duration-ms="232" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowserSession -->
       </class> <!-- test.computer.BuyingCheapComputerTest -->
     </test> <!-- Group 1 -->
-    <test started-at="2022-12-12T23:30:47 ICT" name="Group 2" finished-at="2022-12-12T23:31:58 ICT" duration-ms="70722">
+    <test started-at="2022-12-13T23:45:41 ICT" name="Group 2" finished-at="2022-12-13T23:46:21 ICT" duration-ms="40636">
       <class name="test.computer.BuyingStandardComputerTest">
-        <test-method is-config="true" signature="initBrowserSession(java.lang.String)[pri:0, instance:test.computer.BuyingStandardComputerTest@4bbf6d0e]" started-at="2022-12-12T23:30:48 ICT" name="initBrowserSession" finished-at="2022-12-12T23:30:48 ICT" duration-ms="24" status="PASS">
+        <test-method is-config="true" signature="initBrowserSession(java.lang.String)[pri:0, instance:test.computer.BuyingStandardComputerTest@4bbf6d0e]" started-at="2022-12-13T23:45:41 ICT" name="initBrowserSession" finished-at="2022-12-13T23:45:41 ICT" duration-ms="25" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -111,7 +154,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initBrowserSession -->
-        <test-method signature="testStandardComputerBuying(test_data.computer.ComputerData)[pri:0, instance:test.computer.BuyingStandardComputerTest@4bbf6d0e]" started-at="2022-12-12T23:30:48 ICT" name="testStandardComputerBuying" data-provider="computerData" finished-at="2022-12-12T23:31:19 ICT" duration-ms="31877" status="PASS">
+        <test-method signature="testStandardComputerBuying(test_data.computer.ComputerData)[pri:0, instance:test.computer.BuyingStandardComputerTest@4bbf6d0e]" started-at="2022-12-13T23:45:41 ICT" name="testStandardComputerBuying" data-provider="computerData" finished-at="2022-12-13T23:45:59 ICT" duration-ms="17847" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -119,21 +162,64 @@
               </value>
             </param>
           </params>
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[Cannot locate option with text: Hawaii
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.3.0', revision: 'a4995e2c09*'
+System info: host: 'LAPTOP-020HTH5G', ip: '55.5.55.102', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.16'
+Driver info: driver.version: unknown]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: Cannot locate option with text: Hawaii
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.3.0', revision: 'a4995e2c09*'
+System info: host: 'LAPTOP-020HTH5G', ip: '55.5.55.102', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.16'
+Driver info: driver.version: unknown
+at org.openqa.selenium.support.ui.Select.selectByVisibleText(Select.java:151)
+at models.components.checkout.BillingAddressComponent.selectState(BillingAddressComponent.java:63)
+at test_flows.computer.OrderComputerFlow.inputBillingAddress(OrderComputerFlow.java:162)
+at test.computer.BuyingStandardComputerTest.testStandardComputerBuying(BuyingStandardComputerTest.java:28)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:962)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+at org.testng.TestRunner.privateRun(TestRunner.java:806)
+at org.testng.TestRunner.run(TestRunner.java:601)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:433)
+at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:471)
+at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:58)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+at java.base/java.lang.Thread.run(Thread.java:834)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testStandardComputerBuying -->
-        <test-method is-config="true" signature="captureScreenshot(org.testng.ITestResult)[pri:0, instance:test.computer.BuyingStandardComputerTest@4bbf6d0e]" started-at="2022-12-12T23:31:19 ICT" name="captureScreenshot" finished-at="2022-12-12T23:31:19 ICT" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="captureScreenshot(org.testng.ITestResult)[pri:0, instance:test.computer.BuyingStandardComputerTest@4bbf6d0e]" started-at="2022-12-13T23:45:59 ICT" name="captureScreenshot" finished-at="2022-12-13T23:45:59 ICT" duration-ms="196" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=testStandardComputerBuying status=SUCCESS method=BuyingStandardComputerTest.testStandardComputerBuying(test_data.computer.ComputerData)[pri:0, instance:test.computer.BuyingStandardComputerTest@4bbf6d0e] output={null}]]]>
+                <![CDATA[[TestResult name=testStandardComputerBuying status=FAILURE method=BuyingStandardComputerTest.testStandardComputerBuying(test_data.computer.ComputerData)[pri:0, instance:test.computer.BuyingStandardComputerTest@4bbf6d0e] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- captureScreenshot -->
-        <test-method signature="testStandardComputerBuying(test_data.computer.ComputerData)[pri:0, instance:test.computer.BuyingStandardComputerTest@4bbf6d0e]" started-at="2022-12-12T23:31:19 ICT" name="testStandardComputerBuying" data-provider="computerData" finished-at="2022-12-12T23:31:39 ICT" duration-ms="19831" status="PASS">
+        <test-method signature="testStandardComputerBuying(test_data.computer.ComputerData)[pri:0, instance:test.computer.BuyingStandardComputerTest@4bbf6d0e]" started-at="2022-12-13T23:45:59 ICT" name="testStandardComputerBuying" data-provider="computerData" finished-at="2022-12-13T23:46:10 ICT" duration-ms="11187" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -141,21 +227,64 @@
               </value>
             </param>
           </params>
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[Cannot locate option with text: Hawaii
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.3.0', revision: 'a4995e2c09*'
+System info: host: 'LAPTOP-020HTH5G', ip: '55.5.55.102', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.16'
+Driver info: driver.version: unknown]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: Cannot locate option with text: Hawaii
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.3.0', revision: 'a4995e2c09*'
+System info: host: 'LAPTOP-020HTH5G', ip: '55.5.55.102', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.16'
+Driver info: driver.version: unknown
+at org.openqa.selenium.support.ui.Select.selectByVisibleText(Select.java:151)
+at models.components.checkout.BillingAddressComponent.selectState(BillingAddressComponent.java:63)
+at test_flows.computer.OrderComputerFlow.inputBillingAddress(OrderComputerFlow.java:162)
+at test.computer.BuyingStandardComputerTest.testStandardComputerBuying(BuyingStandardComputerTest.java:28)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:962)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+at org.testng.TestRunner.privateRun(TestRunner.java:806)
+at org.testng.TestRunner.run(TestRunner.java:601)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:433)
+at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:471)
+at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:58)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+at java.base/java.lang.Thread.run(Thread.java:834)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testStandardComputerBuying -->
-        <test-method is-config="true" signature="captureScreenshot(org.testng.ITestResult)[pri:0, instance:test.computer.BuyingStandardComputerTest@4bbf6d0e]" started-at="2022-12-12T23:31:39 ICT" name="captureScreenshot" finished-at="2022-12-12T23:31:39 ICT" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="captureScreenshot(org.testng.ITestResult)[pri:0, instance:test.computer.BuyingStandardComputerTest@4bbf6d0e]" started-at="2022-12-13T23:46:10 ICT" name="captureScreenshot" finished-at="2022-12-13T23:46:10 ICT" duration-ms="144" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=testStandardComputerBuying status=SUCCESS method=BuyingStandardComputerTest.testStandardComputerBuying(test_data.computer.ComputerData)[pri:0, instance:test.computer.BuyingStandardComputerTest@4bbf6d0e] output={null}]]]>
+                <![CDATA[[TestResult name=testStandardComputerBuying status=FAILURE method=BuyingStandardComputerTest.testStandardComputerBuying(test_data.computer.ComputerData)[pri:0, instance:test.computer.BuyingStandardComputerTest@4bbf6d0e] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- captureScreenshot -->
-        <test-method signature="testStandardComputerBuying(test_data.computer.ComputerData)[pri:0, instance:test.computer.BuyingStandardComputerTest@4bbf6d0e]" started-at="2022-12-12T23:31:39 ICT" name="testStandardComputerBuying" data-provider="computerData" finished-at="2022-12-12T23:31:58 ICT" duration-ms="18747" status="PASS">
+        <test-method signature="testStandardComputerBuying(test_data.computer.ComputerData)[pri:0, instance:test.computer.BuyingStandardComputerTest@4bbf6d0e]" started-at="2022-12-13T23:46:10 ICT" name="testStandardComputerBuying" data-provider="computerData" finished-at="2022-12-13T23:46:21 ICT" duration-ms="10840" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -163,21 +292,64 @@
               </value>
             </param>
           </params>
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[Cannot locate option with text: Hawaii
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.3.0', revision: 'a4995e2c09*'
+System info: host: 'LAPTOP-020HTH5G', ip: '55.5.55.102', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.16'
+Driver info: driver.version: unknown]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: Cannot locate option with text: Hawaii
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.3.0', revision: 'a4995e2c09*'
+System info: host: 'LAPTOP-020HTH5G', ip: '55.5.55.102', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.16'
+Driver info: driver.version: unknown
+at org.openqa.selenium.support.ui.Select.selectByVisibleText(Select.java:151)
+at models.components.checkout.BillingAddressComponent.selectState(BillingAddressComponent.java:63)
+at test_flows.computer.OrderComputerFlow.inputBillingAddress(OrderComputerFlow.java:162)
+at test.computer.BuyingStandardComputerTest.testStandardComputerBuying(BuyingStandardComputerTest.java:28)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:962)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+at org.testng.TestRunner.privateRun(TestRunner.java:806)
+at org.testng.TestRunner.run(TestRunner.java:601)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:433)
+at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:471)
+at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:58)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+at java.base/java.lang.Thread.run(Thread.java:834)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testStandardComputerBuying -->
-        <test-method is-config="true" signature="captureScreenshot(org.testng.ITestResult)[pri:0, instance:test.computer.BuyingStandardComputerTest@4bbf6d0e]" started-at="2022-12-12T23:31:58 ICT" name="captureScreenshot" finished-at="2022-12-12T23:31:58 ICT" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="captureScreenshot(org.testng.ITestResult)[pri:0, instance:test.computer.BuyingStandardComputerTest@4bbf6d0e]" started-at="2022-12-13T23:46:21 ICT" name="captureScreenshot" finished-at="2022-12-13T23:46:21 ICT" duration-ms="158" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=testStandardComputerBuying status=SUCCESS method=BuyingStandardComputerTest.testStandardComputerBuying(test_data.computer.ComputerData)[pri:0, instance:test.computer.BuyingStandardComputerTest@4bbf6d0e] output={null}]]]>
+                <![CDATA[[TestResult name=testStandardComputerBuying status=FAILURE method=BuyingStandardComputerTest.testStandardComputerBuying(test_data.computer.ComputerData)[pri:0, instance:test.computer.BuyingStandardComputerTest@4bbf6d0e] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- captureScreenshot -->
-        <test-method is-config="true" signature="closeBrowserSession()[pri:0, instance:test.computer.BuyingStandardComputerTest@4bbf6d0e]" started-at="2022-12-12T23:31:58 ICT" name="closeBrowserSession" finished-at="2022-12-12T23:31:58 ICT" duration-ms="134" status="PASS">
+        <test-method is-config="true" signature="closeBrowserSession()[pri:0, instance:test.computer.BuyingStandardComputerTest@4bbf6d0e]" started-at="2022-12-13T23:46:21 ICT" name="closeBrowserSession" finished-at="2022-12-13T23:46:21 ICT" duration-ms="136" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowserSession -->

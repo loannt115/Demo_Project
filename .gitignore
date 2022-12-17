@@ -12,3 +12,4 @@ buildNumber.properties
 .idea/
 allure-*
 screenshots/
+test-output/
